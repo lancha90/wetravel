@@ -1,0 +1,158 @@
+button.btn.btn-like.btn-default:hover,
+button.btn.btn-like.btn-default.select{
+	color: white;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+
+button.btn.btn-unlike.btn-default:hover,
+button.btn.btn-unlike.btn-default.select{
+	color: white;
+	background-color: #d9534f;
+	border-color: #d43f3a;
+}
+
+header,
+footer{
+	background: #F1F1F1;
+	padding: 1em;
+	width: 100%;
+}
+
+footer{
+	border-top: solid 1px black;
+	margin-top: 1em;
+}
+
+header{
+	border-bottom: solid 1px black;
+	margin-bottom: 1em;
+}
+
+div.menu,
+div.container{
+	display: inline-block;
+	vertical-align: top;
+}
+
+div.container{
+	width: 78%;
+}
+div.container div.container-center{
+	margin: 0 auto;
+	width: 815px;
+}
+div.container div.item{
+	cursor: pointer;
+	display: inline-block;
+	min-width: 200px;
+	overflow: hidden;
+	vertical-align: top;
+	width: 20%;
+}
+div.container div.item div.image{
+	position: relative;
+	top: 0;
+}
+div.container div.item div.image div.over_categories{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+div.container div.item div.image div.over_categories ul,
+div.over-info div.over-slide ul{
+	list-style-type: none;
+	padding-left: 0;
+	margin: 0.2em 0;
+	text-decoration: none;
+}
+div.container div.item div.image div.over_categories ul li,
+div.over-info div.over-slide ul li{
+	border-radius: 0.5em;
+	color:	white;
+	display: inline-block;
+	font-size: 0.7em;
+	padding: 0.5em;
+	vertical-align: top;
+}
+div.container div.item div.image img{
+	max-width: 100%;
+}
+
+div.content-video{
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+div.over-info{
+	position: absolute;
+	height: 70px;
+	width: 100%;
+	z-index: 99;
+}
+div.over-info div.over-slide{
+	background: rgba(241, 241, 241, 0.7);
+	position: absolute;
+	padding-left: 1em;
+	top: -70px;
+	width: 100%;
+    transition: all 1s;
+	-webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
+	-moz-transition: all 1s; /* For Safari 3.1 to 6.0 */
+}
+div.over-info div.over-slide h3{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2em;
+	margin-top: 0.7em;
+}
+div.over-info div.over-slide div.half,
+header div.half{
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+	width: 49%;
+}
+div.over-info div.over-slide div.half div.btn-rating-container,
+div.over-info div.over-slide div.half div.rating-container{
+	display: inline-block;
+	height: 68px;
+	vertical-align: middle;
+}
+
+div.over-info:hover div.over-slide{
+	top: 0px;
+}
+
+div.menu{
+	width: 20%;
+}
+
+div#over_player{
+	position: fixed;
+	display: none;
+	background: rgba(0,0,0,0.7);
+	height: 100%;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+}
+
+div.button{
+	cursor: pointer;
+	background: green;
+	border-radius: 0.5em;
+}
+div.right{
+	text-align: right;
+}
+
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}

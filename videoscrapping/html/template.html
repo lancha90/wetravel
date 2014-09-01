@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="Diego Mauricio Herrera Alzate" name="author"/>
+
+        <title>{% block title %}HallApps{% endblock %}</title>
+ 
+        <link rel="shortcut icon" href="image/favicon.ico" >
+        <link rel="stylesheet" href="{{STATIC_URL}}css/normalize.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}css/style.css">
+
+        <!--[if lt IE 9]> HTML5Shiv
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        {% block head %}
+		{% endblock %}
+ 
+    </head>
+    <body>
+        <header>
+            <div class="half">
+                <a href="/">
+                    <h1 style="color: blue;"><Strong style="color: red;">We</Strong>Travel</h1>
+                </a>
+                <h5>El lugar donde encuentras todo lo que necesitas para salir de viaje!</h5>
+            </div>
+            <div class="half right">
+                {% if user.username == '' %}
+                <a href="/users/login">
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon"></span> Log in
+                    </button>
+                </a>
+                <a href="/users/singup">
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon"></span> Sing up
+                    </button>
+                </a>
+                {% else %}
+                    <h2>{{user.username}}</h2>
+                    <a href="/users/logout">
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon"></span> Sing out
+                    </button>
+                </a>
+                {% endif %}
+
+            </div>
+
+
+
+    	</header>
+    
+        <div id="over_player">
+
+        </div>
+
+    <div class="menu">
+        <!--div class="panel panel-primary">
+          <div class="panel-heading">Panel heading without title</div>
+          <div class="panel-body">
+            <ul class="nav nav-pills nav-stacked">
+                  <li class="active"><a href="#">Videos</a></li>
+                  <li><a href="#">Fotos</a></li>
+                  <li><a href="#">Blogs</a></li>
+                </ul>
+          </div>
+        </div-->
+        
+        <div class="panel panel-primary">
+          <div class="panel-heading">Canales</div>
+            <div class="panel-body">
+                <ul id="menu-channels" class="nav nav-pills nav-stacked">
+                    {% for item in channels %}
+                        <li ref="{{item.id}}"><a href="#{{item.name}}">{{item.name}}</a></li>
+                    {%endfor%}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container-center">
+            {% block container %}
+
+            {% endblock %}
+        </div>
+    </div>
+ 
+    <footer>
+        <p>Footer</p>
+    </footer>
+        <script src="{{STATIC_URL}}js/jquery.min.js"></script>
+        <script src="{{STATIC_URL}}js/jquery.lazyload.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="{{STATIC_URL}}js/main.js"></script>
+    </body>
+</html>

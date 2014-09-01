@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="Diego Mauricio Herrera Alzate" name="author"/>
+
+        <title>{{video.name}}</title>
+ 
+        <link rel="shortcut icon" href="image/favicon.ico" >
+        <link rel="stylesheet" href="{{STATIC_URL}}css/normalize.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+        <!--[if lt IE 9]> HTML5Shiv
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script src="{{STATIC_URL}}js/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            var uuid = '{{video.uuid}}';
+            var token = '{{csrf_token}}';
+        </script>
+        <script src="{{STATIC_URL}}js/video.js"></script>
+ 
+    </head>
+    <body>
+    	<div class="over-info">
+    		<div class="over-slide">
+    			<div class="half" id="title">
+    				<h3 class="no-select">{{video.name}}</h3>
+    				<ul>
+						<li class="no-select"  style="background:{{video.channel.color}};">{{video.channel.name}}</li>
+    				</ul>
+    			</div>
+        		<div class="half right" id="controls">
+                {% if user.username != '' %}
+                        <div class="rating-container">
+                            <h2 id="rating">
+                                {{like}}
+                            </h2>
+                        </div>
+                        <div class="btn-rating-container">
+                            <div>
+                                <button id="like" type="button" class="btn btn-like btn-default {% if isliketrue %} select {% endif %}" >
+                                    <span class="glyphicon glyphicon-hand-up"></span>
+                                </button>
+                            </div>
+
+                            <div>
+                                <button id="unlike" type="button" class="btn btn-unlike btn-default {% if islikefalse %} select {% endif %}">
+                                    <span class="glyphicon glyphicon-hand-down"></span>
+                                </button>
+                            </div>
+                        </div>
+                {% else %}
+                    <a href="/users/login?next=/video/{{video.uuid}}">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon"></span> Log in
+                        </button>
+                    </a>
+                    <a href="/users/singup">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon"></span> Sing up
+                        </button>
+                    </a>
+                {% endif%}
+        		</div>
+
+    		</div>
+    	</div>
+     	<div class="content-video">
+			<iframe id="ytplayer" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/{{video.url}}?autoplay=0&origin=http://example.com&theme=light&rel=0&showinfo=0" frameborder="0"/>
+		</div>
+
+    </body>
+</html>

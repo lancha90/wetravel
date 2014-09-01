@@ -1,0 +1,21 @@
+{% extends 'template.html' %}
+{% block title %}Backpacking Travel - @lancha90 {% endblock %}
+
+{% block head %}
+    
+{% endblock %}
+
+{% block container %}
+
+		{% if message %}
+			<div class="alert alert-danger" role="alert">Nombre de usuario o contraseña incorrectos</div>
+		{% endif %}
+
+
+        <form id='form' method='POST' action=''>
+            {% csrf_token %}
+            <table>{{form}}</table>
+            <p><input type="submit" value="Log In"></p>
+        </form>
+
+{% endblock %}
