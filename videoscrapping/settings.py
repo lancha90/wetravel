@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'videoscrapping.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'dft5233ksn262e',                      # Or path to database file if using sqlite3.
         'USER': 'dslsqdnurxetuc',                      # Not used with sqlite3.
         'PASSWORD': 'ZLQtStKjMHzSNw7Z4zn5HqcEBy',                  # Not used with sqlite3.
