@@ -10,6 +10,9 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
+
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
 ADMINS = (
@@ -17,8 +20,6 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-
-STATIC_ROOT = ''
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
@@ -44,7 +45,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+
 
 
 TEMPLATE_DIRS = (
@@ -80,19 +81,31 @@ ROOT_URLCONF = 'videoscrapping.urls'
 WSGI_APPLICATION = 'videoscrapping.wsgi.application'
 
 
+# =========== HEROKU CONFIGURATION =====================
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+DATABASES['default'] =  dj_database_url.config()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+ALLOWED_HOSTS = ['*']
+STATIC_ROOT = 'staticfiles'
+# =========== END HEROKU CONFIGURATION =====================
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'videoscrapping',                      # Or path to database file if using sqlite3.
-        'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': '123456',                  # Not used with sqlite3.
-        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
+
+# =========== LOCAL CONFIGURATION =====================
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#        'NAME': 'videoscrapping',                      # Or path to database file if using sqlite3.
+#        'USER': 'root',                      # Not used with sqlite3.
+#        'PASSWORD': '123456',                  # Not used with sqlite3.
+#        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
+#        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
+#    }
+#}
+#ALLOWED_HOSTS = []
+#STATIC_ROOT = ''
+
+# =========== END LOCAL CONFIGURATION =====================
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
