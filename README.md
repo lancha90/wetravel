@@ -1,4 +1,4 @@
 wetravel
 ========
 
-django cliente for channels from youtube
+django client for youtube channels
