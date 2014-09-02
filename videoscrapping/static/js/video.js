@@ -5,9 +5,6 @@ var init = function() {
       $('button#unlike').on('click',function(){
                   like('/api/'+uuid+'/unlike',$(this));
             });
-
-      
-      $('div.over-info div.over-slide').delay( 1000 ).css('top','-90px');
       
 };
 
