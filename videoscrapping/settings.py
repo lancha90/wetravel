@@ -10,8 +10,6 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-# Parse database configuration from $DATABASE_URL
-import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
@@ -84,6 +82,7 @@ WSGI_APPLICATION = 'videoscrapping.wsgi.application'
 # =========== HEROKU CONFIGURATION =====================
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -97,22 +96,23 @@ DATABASES = {
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 STATIC_ROOT = 'staticfiles'
+"""
 # =========== END HEROKU CONFIGURATION =====================
 
 
 # =========== LOCAL CONFIGURATION =====================
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#        'NAME': 'videoscrapping',                      # Or path to database file if using sqlite3.
-#        'USER': 'root',                      # Not used with sqlite3.
-#        'PASSWORD': '123456',                  # Not used with sqlite3.
-#        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
-#        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
-#    }
-#}
-#ALLOWED_HOSTS = []
-#STATIC_ROOT = ''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'videoscrapping',                      # Or path to database file if using sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
+        'PASSWORD': '123456',                  # Not used with sqlite3.
+        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
+ALLOWED_HOSTS = []
+STATIC_ROOT = ''
 
 # =========== END LOCAL CONFIGURATION =====================
 

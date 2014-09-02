@@ -12,9 +12,14 @@ button.btn.btn-unlike.btn-default.select{
 	border-color: #d43f3a;
 }
 
+header a:hover,
+footer a:hover{
+	text-decoration: none;
+}
+
 header,
 footer{
-	background: #F1F1F1;
+	background: #4E5D6C;
 	padding: 1em;
 	width: 100%;
 }
@@ -36,15 +41,19 @@ div.container{
 }
 
 div.container{
-	width: 78%;
+	width: 75%;
+	min-width: 850px;
 }
 div.container div.container-center{
 	margin: 0 auto;
-	width: 815px;
+	width: 850px;
 }
 div.container div.item{
 	cursor: pointer;
 	display: inline-block;
+	margin-bottom: 1em;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
 	min-width: 200px;
 	overflow: hidden;
 	vertical-align: top;
@@ -90,15 +99,15 @@ div.content-video{
 
 div.over-info{
 	position: absolute;
-	height: 70px;
+	height: 100px;
 	width: 100%;
 	z-index: 99;
 }
 div.over-info div.over-slide{
-	background: rgba(241, 241, 241, 0.7);
+	background: rgba(78, 93, 108, 0.7);
+	height: 90px;
 	position: absolute;
 	padding-left: 1em;
-	top: -70px;
 	width: 100%;
     transition: all 1s;
 	-webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
@@ -116,6 +125,9 @@ header div.half{
 	vertical-align: middle;
 	width: 49%;
 }
+div.over-info div.over-slide div.half#controls{
+	height: 80px;
+}
 div.over-info div.over-slide div.half div.btn-rating-container,
 div.over-info div.over-slide div.half div.rating-container{
 	display: inline-block;
@@ -128,7 +140,10 @@ div.over-info:hover div.over-slide{
 }
 
 div.menu{
-	width: 20%;
+	width: 23%;
+}
+div.menu div.panel{
+	margin-left: 1em;
 }
 
 div#over_player{
@@ -148,6 +163,10 @@ div.button{
 }
 div.right{
 	text-align: right;
+}
+
+.btn,.btn:hover{
+	border: solid 1px white;
 }
 
 .no-select {

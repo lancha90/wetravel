@@ -5,10 +5,14 @@ var init = function() {
       $('button#unlike').on('click',function(){
                   like('/api/'+uuid+'/unlike',$(this));
             });
+
+      
+      $('div.over-info div.over-slide').delay( 1000 ).css('top','-90px');
+      
 };
 
 var show_popup = function (message){
-      alert(message);
+      //alert(message);
 };
 
 var like = function (link,button) {

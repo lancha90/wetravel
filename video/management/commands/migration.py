@@ -1,4 +1,5 @@
 # python manage.py migration -a start 
+# heroku run python manage.py migration -a start 
 from django.utils.encoding import smart_str, smart_unicode
 from optparse import make_option
 from django.core.management.base import BaseCommand, CommandError
