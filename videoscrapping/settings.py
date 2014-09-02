@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'videoscrapping.wsgi.application'
 # =========== HEROKU CONFIGURATION =====================
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -115,7 +115,7 @@ ALLOWED_HOSTS = []
 STATIC_ROOT = ''
 
 # =========== END LOCAL CONFIGURATION =====================
-
+"""
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
