@@ -1,7 +1,13 @@
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
-        <meta content="Diego Mauricio Herrera Alzate" name="author"/>
+        <meta content="Diego Mauricio Herrera Alzate - diegomao627@gmail.com" name="author"/>
+        <meta name="description" content="We Travel, todo lo que necesitas saber para salir de viaje">
+        <meta name="keywords" content="Viajes,Mochileros,Backpacking,Travel,Trip">
+        <meta property="og:title" content="We Travel, todo lo que necesitas saber para salir de viaje" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="http://www.svenler.com/documents/fb_thumb.jpg" />
+        <meta property="og:url" content="http://wetravel.herokuapp.com/" />
 
         <title>{% block title %}HallApps{% endblock %}</title>
  
@@ -19,6 +25,15 @@
  
     </head>
     <body>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=108551905986478&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
         <header>
             <div class="half">
                 <a href="/">
@@ -73,6 +88,7 @@
           <div class="panel-heading">Canales</div>
             <div class="panel-body">
                 <ul id="menu-channels" class="nav nav-pills nav-stacked">
+                    <li ref="0"><a href="#all">Todos</a></li>
                     {% for item in channels %}
                         <li ref="{{item.id}}"><a href="#{{item.name}}">{{item.name}}</a></li>
                     {%endfor%}
@@ -90,8 +106,11 @@
     </div>
  
     <footer>
-        <p>Footer</p>
+        <div data-type="button_count" data-width="100px" class="fb-share-button" data-href="http://wetravel.herokuapp.com/"></div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-text="WeTravel, el lugar donde encuentras todo lo que necesitas saber para iniciar tu viaje" data-via="lancha90" data-hashtags="WeTravel">Tweet</a>
+        <a href="https://twitter.com/lancha90" target="_blank">@lancha90</a>
     </footer>
+
         <script src="{{STATIC_URL}}js/jquery.min.js"></script>
         <script src="{{STATIC_URL}}js/jquery.lazyload.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -99,6 +118,7 @@
         {% block script %}
 
         {% endblock %}
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

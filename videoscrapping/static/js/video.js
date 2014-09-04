@@ -5,6 +5,13 @@ var init = function() {
       $('button#unlike').on('click',function(){
                   like('/api/'+uuid+'/unlike',$(this));
             });
+
+      $("div.over-slide").css('top','0px');
+
+      $("div.over-slide").delay( 5000 ).fadeIn(1,function(){
+            $(this).css('top','');
+      });
+
       
 };
 

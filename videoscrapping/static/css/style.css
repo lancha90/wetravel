@@ -26,7 +26,13 @@ footer{
 
 footer{
 	border-top: solid 1px black;
-	margin-top: 1em;
+	bottom: 0;
+	height: 3em;
+	position: fixed;
+	text-align: center;
+}
+footer a{
+	color: white;
 }
 
 header{
@@ -37,6 +43,7 @@ header{
 div.menu,
 div.container{
 	display: inline-block;
+	margin-bottom: 3em;
 	vertical-align: top;
 }
 
@@ -132,6 +139,12 @@ header div.half{
 }
 div.over-info div.over-slide div.half#controls{
 	height: 80px;
+}
+div.over-info div.over-slide div.half#title a{
+	color: white;
+}
+div.over-info div.over-slide div.half#title a:hover{
+	text-decoration: none;
 }
 div.over-info div.over-slide div.half div.btn-rating-container,
 div.over-info div.over-slide div.half div.rating-container{

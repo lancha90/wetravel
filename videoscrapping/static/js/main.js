@@ -8,9 +8,15 @@ var init = function() {
     $('ul#menu-channels li').on('click',function(){
         $('ul#menu-channels li').removeClass('active');
         $(this).addClass('active');
+        ref=$(this).attr('ref');
 
-        $('div.item[ref="'+$(this).attr('ref')+'"]').fadeIn();
-        $('div.item[ref!="'+$(this).attr('ref')+'"]').fadeOut();
+        if(ref!=0){
+
+            $('div.item[ref="'+ref+'"]').fadeIn();
+            $('div.item[ref!="'+ref+'"]').fadeOut();
+        }else{
+            $('div.item').fadeIn();
+        }
 
     });
 
