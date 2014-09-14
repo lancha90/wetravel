@@ -64,8 +64,6 @@
 
             </div>
 
-
-
     	</header>
     
         <div id="over_player">
@@ -83,8 +81,15 @@
                 </ul>
           </div>
         </div-->
-        
+    <div class="search-bar">
+        <div class="input-group">
+            <input id="input-search" type="text" placeholder="Search">
+            <span class="input-group-addon glyphicon glyphicon-search" id="btn-search"></span>
+        </div>
+    </div>
+
         <div class="panel panel-primary">
+
           <div class="panel-heading">Canales</div>
             <div class="panel-body">
                 <ul id="menu-channels" class="nav nav-pills nav-stacked">
@@ -113,7 +118,7 @@
 
         <script src="{{STATIC_URL}}js/jquery.min.js"></script>
         <script src="{{STATIC_URL}}js/jquery.lazyload.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
         <script src="{{STATIC_URL}}js/main.js"></script>
         {% block script %}
 

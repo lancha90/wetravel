@@ -9,18 +9,23 @@
 
 		{% for video in listVideo %}
 		
-			<div class="item" ref="{{video.channel.id}}" href="/video/{{video.uuid}}">
-					<div class="image"> 
-						<img class="lazy" data-original="{{video.image}}"/>
-						<div class="over_categories">
-							<ul>
-							{% for cat in video.categorie.all %}
-								<li style="background:{{cat.color}};">{{cat.name}}</li>
-							{% endfor %}
-							</ul>
-						</div>
+			<div class="item" ref="{{video.channel.id}}" href="/video/{{video.uuid}}">	
+				
+				<div class="item-hover">
+					<span class="glyphicon glyphicon-play"></span>
+				</div>
+				<div class="image"> 
+					<img class="lazy" data-original="{{video.image}}"/>
+					<div class="over_categories">
+						<ul>
+						{% for cat in video.categorie.all %}
+							<li style="background:{{cat.color}};">{{cat.name}}</li>
+						{% endfor %}
+						</ul>
 					</div>
+				</div>
 				<a>{{video.name}}</a>
+
 			</div>
 		{% endfor %}
 

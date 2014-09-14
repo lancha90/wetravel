@@ -58,15 +58,34 @@ div.container div.container-center{
 div.container div.item{
 	cursor: pointer;
 	display: inline-block;
+	height: 175px;
 	margin-bottom: 1em;
 	margin-left: 0.2em;
 	margin-right: 0.2em;
-	min-width: 200px;
 	overflow: hidden;
 	text-align: center;
 	vertical-align: top;
-	width: 20%;
+	width: 200px;
 }
+div.container div.item div.item-hover{
+	width: 200px;
+	height: 175px;
+	position: absolute;
+	z-index: 99;
+}
+div.container div.item div.item-hover span{
+	font-size: 0em;
+	top: 50%;
+	margin-top: -15px;
+}
+div.container div.item div.item-hover:hover{
+	background: rgba(0,0,0,0.5);
+}
+div.container div.item div.item-hover:hover span{
+	font-size: 2em;
+}
+
+
 div.container div.item a{
 	color: white;
 }
@@ -164,6 +183,31 @@ div.menu div.panel{
 	margin-left: 1em;
 }
 
+div.menu div.search-bar{
+	margin-bottom: 1em;
+	margin-left: 1em;
+}
+div.menu div.search-bar input{
+	background-color: #ffffff;
+	background-image: none;
+	color: #2b3e50;
+	font-size: 15px;
+	width: 85%;
+}
+div.menu div.search-bar span{
+	background-color: #df691a;
+	cursor: pointer;
+	width: 15%;
+}
+
+div.menu div.search-bar input,
+div.menu div.search-bar span{
+	display: inline-block;
+	height: 39px;
+	top: 0px;
+	vertical-align: top;
+}
+
 div#over_player{
 	position: fixed;
 	display: none;
@@ -189,7 +233,12 @@ div.right{
 .btn,.btn:hover{
 	border: solid 1px white;
 }
-
+.input-group-addon:last-child{
+	border: 0;
+}
+.input-group{
+	width: 100%;
+}
 .no-select {
     -webkit-user-select: none;
     -moz-user-select: none;
