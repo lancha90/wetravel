@@ -1,7 +1,10 @@
+
+
 var search_video = function(){
     search_text=$('.menu #input-search').val();
     if(search_text.trim().length > 0 ){
         $('div.item').fadeOut();
+
         $( "div.item:contains('"+search_text+"')").fadeIn(function(){
             $(window).trigger('scroll');
         });
@@ -9,6 +12,10 @@ var search_video = function(){
 };
 
 var init = function() {
+
+    jQuery.expr[':'].contains = function(a, i, m) {
+        return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+    };
 
     $('div.item').on('click',function(){
         location.href=$(this).attr('href');
