@@ -71,6 +71,10 @@
 
             </div>
 
+            {% block header %}
+
+            {% endblock %}
+
     	</header>
     
         <div id="over_player">
@@ -114,7 +118,7 @@
 
           <div class="panel-heading">Grupos</div>
             <div class="panel-body">
-                <ul id="menu-channels" class="nav nav-pills nav-stacked">
+                <ul id="menu-groups" class="nav nav-pills nav-stacked">
                     <li ref="0"><a href="#all">Todos</a></li>
                     {% for item in groups %}
                         <li ref="{{item.id}}"><a href="#{{item.name}}">{{item.name}}</a></li>

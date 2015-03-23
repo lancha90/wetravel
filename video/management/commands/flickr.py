@@ -43,7 +43,7 @@ class Command(BaseCommand):
                 if len(Photo.objects.filter(photo_id=item['id'])) > 0:
                     _page=current_page
                 else:
-                    photo=Photo(photo_id=item['id'],owner=item['owner'],secret=item['secret'],server=item['server'],farm=item['farm'],title=item['title'],ownername=item['ownername'],group=_group)
+                    photo=Photo(photo_id=item['id'],owner=item['owner'],secret=item['secret'],server=item['server'],farm=item['farm'],title=item['title'],ownername=item['ownername'],dateadded=item['dateadded'],group=_group)
                     try:
                         photo.save()
                     except Exception as e:

@@ -32,6 +32,7 @@ class Photo(models.Model):
 	farm=models.CharField(max_length=3)
 	title=models.CharField(max_length=250)
 	ownername=models.CharField(max_length=100)
+	dateadded=models.CharField(max_length=50)
 	group = models.ForeignKey(Group, related_name='u+')
 	timestamp = models.DateTimeField(auto_now_add=True)
 	def __unicode__(self):
