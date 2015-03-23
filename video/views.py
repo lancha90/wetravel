@@ -11,6 +11,13 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 DEVELOPER_KEY = "AIzaSyA1A0iNtiAFf_ZgLdwifWH24WVR9BKvcQw"
 
+
+# Flick
+def flickr(request):
+	photos = Photo.objects.all().order_by('id')[:300]
+	groups = Group.objects.all().order_by('name')
+	return render_to_response('flickr.html',{'listPhotos':photos,'groups':groups,'user':request.user},context_instance=RequestContext(request))
+
 # Videos
 
 def index(request):

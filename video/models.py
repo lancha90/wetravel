@@ -13,6 +13,31 @@ class Categorie(models.Model):
 	def __unicode__(self):
 		return u'%s  - %s' % (self.id,self.name)
 
+''' API Flickr '''
+class Group(models.Model):
+	id = models.AutoField(primary_key=True)
+	group_id=models.CharField(max_length=20)
+	name=models.CharField(max_length=150)
+	description=models.CharField(max_length=500)
+	timestamp = models.DateTimeField(auto_now_add=True)
+	def __unicode__(self):
+		return u'%s  - %s' % (self.id,self.name)
+
+class Photo(models.Model):
+	id = models.AutoField(primary_key=True)
+	photo_id=models.CharField(max_length=20)
+	owner=models.CharField(max_length=100)
+	secret=models.CharField(max_length=20)
+	server=models.CharField(max_length=10)
+	farm=models.CharField(max_length=3)
+	title=models.CharField(max_length=250)
+	ownername=models.CharField(max_length=100)
+	group = models.ForeignKey(Group, related_name='u+')
+	timestamp = models.DateTimeField(auto_now_add=True)
+	def __unicode__(self):
+		return u'%s  - %s' % (self.id,self.photo_id)
+
+''' API Youtube '''
 class Channel(models.Model):
 	id = models.AutoField(primary_key=True)
 	name=models.CharField(max_length=255)

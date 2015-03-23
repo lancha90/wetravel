@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^video/(?P<uuid>[^/]+)/$', 'video.views.video', name='video'),
     # Redirect to index
     url(r'^$', 'video.views.index', name='index'),
+    url(r'^flickr/$', 'video.views.flickr', name='flickr'),
 
     # ----------------------------- API -------------------------------
     # like video

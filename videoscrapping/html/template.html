@@ -97,6 +97,8 @@
 
         <div class="panel panel-primary">
 
+{% if channels %}
+
           <div class="panel-heading">Canales</div>
             <div class="panel-body">
                 <ul id="menu-channels" class="nav nav-pills nav-stacked">
@@ -106,6 +108,22 @@
                     {%endfor%}
                 </ul>
             </div>
+{%endif%}
+
+{% if groups %}
+
+          <div class="panel-heading">Grupos</div>
+            <div class="panel-body">
+                <ul id="menu-channels" class="nav nav-pills nav-stacked">
+                    <li ref="0"><a href="#all">Todos</a></li>
+                    {% for item in groups %}
+                        <li ref="{{item.id}}"><a href="#{{item.name}}">{{item.name}}</a></li>
+                    {%endfor%}
+                </ul>
+            </div>
+{%endif%}
+
+
         </div>
     </div>
 
