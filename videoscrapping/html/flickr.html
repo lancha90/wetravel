@@ -1,0 +1,28 @@
+{% extends 'template.html' %}
+{% block title %}We Travel - @lancha90 {% endblock %}
+
+{% block header %}            
+    <ul class="nav nav-pills nav-justified">
+        <li role="presentation"><a href="/">Video</a></li>
+        <li role="presentation" class="active"><a href="/flickr">Fotos</a></li>
+    </ul>
+{% endblock %}
+
+{% block head %}
+    
+{% endblock %}
+
+{% block container %}
+
+		{% for photo in listPhotos %}
+		
+			<div class="item-photo" href="https://www.flickr.com/photos/{{photo.owner}}/{{photo.photo_id}}/" ref="{{photo.group.id}}">	
+				<div class="image"> 
+					<img class="lazy" data-original="https://c1.staticflickr.com/{{photo.farm}}/{{photo.server}}/{{photo.photo_id}}_{{photo.secret}}_m.jpg"/>
+				</div>
+				<p>{{photo.title}}</p>
+
+			</div>
+		{% endfor %}
+
+{% endblock %}
